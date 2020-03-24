@@ -6,9 +6,9 @@ Text Chat Command Bot For Discord
 Before installing the project an application must be registered from the discord developer portal.
 Follow the tutorial here: https://discordpy.readthedocs.io/en/latest/discord.html
 
-1) Download and unzip the project then run in powershell or other command line.
+1) Download and unzip the project.
 2) Update the token in the ".env" file to the token of your application registered in the initial setup.
-3) Run from command line
+3) Run from command line (ex powershell)
 
 ```bash
 python main
