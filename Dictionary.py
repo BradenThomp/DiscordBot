@@ -3,9 +3,9 @@ from PyDictionary import PyDictionary
 dictionary = PyDictionary()
 
 
-# Returns the definition of a word
+# Returns a dictionary of the definition of a word
 def definition(word):
-    return str(dictionary.meaning(word))
+    return dictionary.meaning(word)
 
 
 # Returns a list of synonyms for a word
