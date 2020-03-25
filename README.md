@@ -20,6 +20,6 @@ On successful setup "Bot has connected to discord" will be displayed in command 
 
 This is a list of all commands that can be run from a discord text chat where all commands start waith a '~':
 
-~dictionary "word" where word is the word to be defined -- returns a definition of the input word
+~dictionary "word" -- returns a definition of the input word
 
-~team "num_teams,players" where players is a list of player names split by a ',' -- returns randomized team
+~team "num_teams,player_list" -- returns randomized team  (all players in player_list must be split by a comma)
