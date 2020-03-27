@@ -6,7 +6,7 @@ Text Chat Command Bot For Discord.
 Before installing the project an application must be registered from the discord developer portal.
 Follow the tutorial here: https://discordpy.readthedocs.io/en/latest/discord.html
 
-For Pycharm Development and Windows Deployment:
+### For Pycharm Development and Windows Deployment:
 
 1) Download and unzip the project.
 2) Update the token in Main.py to the token of your application registered in the initial setup.
@@ -16,7 +16,7 @@ For Pycharm Development and Windows Deployment:
 python main
 ```
 
-For RaspberryPi Deployment
+### For RaspberryPi Deployment
 
 1) Clone the project
 2) Install Required Dependancies
