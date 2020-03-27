@@ -16,7 +16,7 @@ Follow the tutorial here: https://discordpy.readthedocs.io/en/latest/discord.htm
 python main
 ```
 
-### For RaspberryPi Deployment
+### For RaspberryPi Deployment:
 
 1) Clone the project
 2) Install Required Dependancies
