@@ -1,26 +1,24 @@
-import os
 import Dictionary
 import TeamRandomizer
+from MongoCollection import MongoCollection
 
 import discord
 from discord.ext import commands
 
 # import token
-TOKEN = 'NDg3MDgzMjc3NDUxMTMyOTQw.Xn1f_Q.ZmNC_eL7q9mgvimPr7bCADa8rXw'
+TOKEN = 'NDg3MDgzMjc3NDUxMTMyOTQw.XpaTdA.dSNXqtcsALF4Z43OgctR9p3Rxsw'
 print(TOKEN)
 
 # Connect to client
 bot = commands.Bot(command_prefix='~')
 
+# Connect to MongoDB Collection
+comment_col = MongoCollection(dbstr='DiscordMessageDatabase', colstr='messages')
+
 
 @bot.event
 async def on_ready():
     print("Bot has connected to discord")
-
-
-@bot.event
-async def on_message(msg):
-    print(msg)
 
 
 # Returns a Noun and Verb definition of a word if a definition is found
@@ -77,6 +75,18 @@ async def _define(channel, msg):
 
     await channel.send(embed=embed)
 
+
+@bot.event
+async def on_message(msg):
+    if msg.author == bot.user:
+        return
+    await bot.process_commands(msg)  # process all commands
+    print(msg)
+    msg_dict = {'_id': msg.id, 'author_id': msg.author.id, 'author_name': msg.author.name,       # convert a message into a dictionary
+                'author_discriminator': msg.author.discriminator, 'author_nick': msg.author.nick,
+                'content': msg.content, 'created_at': msg.created_at}
+    print(msg_dict)
+    comment_col.save(msg_dict)  # save message to collection
 
 # send TOKEN to client
 bot.run(TOKEN)

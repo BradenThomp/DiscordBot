@@ -1,15 +1,18 @@
 import pymongo
 
-client = pymongo.MongoClient('localhost', 27017)
 
-db = client['DiscordMessageDatabase']
+# A mongoDB collection connection
+class MongoCollection:
 
-messages = db.messages
+    def __init__(self, dbstr, colstr):
+        self.client = pymongo.MongoClient('localhost', 27017)
+        self.db = self.client[dbstr]
+        self.col = self.db[colstr]
 
-message_data = {
-    'user': 'Vector_Bubbs',
-    'content': 'hello'
-}
+    # saves a dictionary to mongoDB
+    def save(self, bson):
+        result = self.col.insert_one(bson)
+        print('One post: {0}'.format(result.inserted_id))
 
-result = messages.insert_one(message_data)
-print('One post: {0}'.format(result.inserted_id))
+
+
