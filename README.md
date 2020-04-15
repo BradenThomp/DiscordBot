@@ -6,6 +6,8 @@ Text Chat Command Bot For Discord.
 Before installing the project an application must be registered from the discord developer portal.
 Follow the tutorial here: https://discordpy.readthedocs.io/en/latest/discord.html
 
+MongoDB must also be installed to run the project https://www.mongodb.com/
+
 ### For Pycharm Development and Windows Deployment:
 
 1) Download and unzip the project.
@@ -13,7 +15,7 @@ Follow the tutorial here: https://discordpy.readthedocs.io/en/latest/discord.htm
 3) Run from command line (ex powershell)
 
 ```bash
-python main
+python3.5 main
 ```
 
 ### For RaspberryPi Deployment:
@@ -25,13 +27,14 @@ python main
 pip3 install PyDictionary
 pip3 install Discord.py
 sudo apt-get install python3-numpy
+pip3 install pymongo==3.4.0
 ```
 
 3) Update the token in Main.py to the token of your application registered in the initial setup
 4) Run from command line
 
 ```bash
-python3 Main.py
+python3.5 Main.py
 ```
 
 On successful setup "Bot has connected to discord" will be displayed in command line
