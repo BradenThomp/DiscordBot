@@ -1,17 +1,37 @@
 # DiscordBot
-Text Chat Command Bot For Discord
+Text Chat Command Bot For Discord.
 
 ## Installation
 
 Before installing the project an application must be registered from the discord developer portal.
 Follow the tutorial here: https://discordpy.readthedocs.io/en/latest/discord.html
 
+### For Pycharm Development and Windows Deployment:
+
 1) Download and unzip the project.
-2) Update the token in the ".env" file to the token of your application registered in the initial setup.
+2) Update the token in Main.py to the token of your application registered in the initial setup.
 3) Run from command line (ex powershell)
 
 ```bash
 python main
+```
+
+### For RaspberryPi Deployment:
+
+1) Clone the project
+2) Install Required Dependancies
+
+```bash
+pip3 install PyDictionary
+pip3 install Discord.py
+sudo apt-get install python3-numpy
+```
+
+3) Update the token in Main.py to the token of your application registered in the initial setup
+4) Run from command line
+
+```bash
+python3 Main.py
 ```
 
 On successful setup "Bot has connected to discord" will be displayed in command line
