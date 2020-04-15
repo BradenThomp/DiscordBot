@@ -6,7 +6,7 @@ import discord
 from discord.ext import commands
 
 # import token
-TOKEN = 'NDg3MDgzMjc3NDUxMTMyOTQw.Xn1elQ.-OxpLwZgtZGAZ8lc4XQ4aQOBbCE'
+TOKEN = 'NDg3MDgzMjc3NDUxMTMyOTQw.Xn1f_Q.ZmNC_eL7q9mgvimPr7bCADa8rXw'
 print(TOKEN)
 
 # Connect to client
