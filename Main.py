@@ -5,11 +5,9 @@ from DbConnection import DbConnection
 
 import discord
 from discord.ext import commands
-from dotenv import Dotenv
 
 # import token
-env_values = Dotenv(os.path.join(os.path.dirname(__file__), ".env"))
-TOKEN = env_values['DISCORD_TOKEN']
+TOKEN = 'NDg3MDgzMjc3NDUxMTMyOTQw.Xn1elQ.-OxpLwZgtZGAZ8lc4XQ4aQOBbCE'
 print(TOKEN)
 
 # Connect to client
