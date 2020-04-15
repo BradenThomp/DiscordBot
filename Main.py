@@ -1,6 +1,7 @@
 import os
 import Dictionary
 import TeamRandomizer
+from DbConnection import DbConnection
 
 import discord
 from discord.ext import commands
@@ -14,10 +15,18 @@ print(TOKEN)
 # Connect to client
 bot = commands.Bot(command_prefix='~')
 
+db_con = DbConnection()
+
 
 @bot.event
 async def on_ready():
     print("Bot has connected to discord")
+
+
+@bot.event
+async def on_message(msg):
+    print(msg)
+    db_con.save(doc=msg)
 
 
 # Returns a Noun and Verb definition of a word if a definition is found
