@@ -8,6 +8,7 @@ class MongoCollection:
         self.client = pymongo.MongoClient('localhost', 27017)
         self.db = self.client[dbstr]
         self.col = self.db[colstr]
+        print(self.col)
 
     # saves a dictionary to mongoDB
     def save(self, bson):

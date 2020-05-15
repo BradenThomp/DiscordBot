@@ -1,12 +1,13 @@
 import Dictionary
 import TeamRandomizer
 from MongoCollection import MongoCollection
+from PiLEDController import PiLEDController
 
 import discord
 from discord.ext import commands
 
 # import token
-TOKEN = 'NDg3MDgzMjc3NDUxMTMyOTQw.XpaTdA.dSNXqtcsALF4Z43OgctR9p3Rxsw'
+TOKEN = 'NDg3MDgzMjc3NDUxMTMyOTQw.XpasfQ.DKRSNAy-Hdh5TqUmB6w9kG3tvbI'
 print(TOKEN)
 
 # Connect to client
@@ -14,6 +15,9 @@ bot = commands.Bot(command_prefix='~')
 
 # Connect to MongoDB Collection
 comment_col = MongoCollection(dbstr='DiscordMessageDatabase', colstr='messages')
+
+# Set up Raspberry Pi LEDs
+LED_21 = PiLEDController(21)
 
 
 @bot.event
@@ -74,6 +78,18 @@ async def _define(channel, msg):
         team_number = team_number + 1
 
     await channel.send(embed=embed)
+
+
+# Turns an LED on a RaspberryPi on
+@bot.command(name='LEDon')
+async def _define(channel):
+    LED_21.poweron()
+
+
+# Turns an LED on a RaspberryPi off
+@bot.command(name='LEDoff')
+async def _define(channel):
+    LED_21.poweroff()
 
 
 @bot.event
