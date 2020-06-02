@@ -23,7 +23,7 @@ env\scripts\activate
 5. Run from command line (ex powershell)
 
 ```bash
-python src/Main.py
+python src\Main.py
 ```
 
 ### For RaspberryPi:
@@ -40,7 +40,7 @@ env\scripts\activate
 5. Run from command line (ex powershell)
 
 ```bash
-python src/Main.py
+python src\Main.py
 ```
 
 On successful setup "Bot has connected to discord" will be displayed in command line
