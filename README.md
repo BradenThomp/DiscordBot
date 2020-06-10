@@ -9,11 +9,11 @@ Follow the tutorial here: https://discordpy.readthedocs.io/en/latest/discord.htm
 
 MongoDB is an optional install https://www.mongodb.com/
 
-The Following instructions require Docker to execute: https://www.docker.com/
+The following instructions require Docker to execute: https://www.docker.com/
 
 1. Download and unzip the project.
 2. Update the token in Main.py to the token of your application registered in the initial setup.
-3. If not running from a raspberry pi make sure all references to RPi.GPIO are commented out. This can not be installed on any OS besides raspian and currently I have not found a way to enable/disable based on OS.
+3. If not running from a raspberry pi make sure all references to RPi.GPIO are commented out. This cannot be installed on any OS besides raspian and currently I have not found a way to enable/disable based on OS.
 4. If not using MongoDB set USE_MONGO = False in Main.py to mock the database.
 5. Create a Docker image.
 
@@ -31,7 +31,7 @@ On successful setup "Bot has connected to discord" will be displayed in command 
 
 ### Installation without docker
 
-If installing without Docker, make sure all dependancies in requirements.txt are installed either in a virtual environment or globaly.
+If installing without Docker, make sure all dependancies in requirements.txt are installed either in a virtual environment or globally.
 
 ## Usage
 
