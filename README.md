@@ -7,43 +7,31 @@ Text Chat Command Bot For Discord.
 Before installing the project an application must be registered from the discord developer portal.
 Follow the tutorial here: https://discordpy.readthedocs.io/en/latest/discord.html
 
-MongoDB must also be installed to run the project https://www.mongodb.com/
+MongoDB is an optional install https://www.mongodb.com/
 
-### For Windows:
+The Following instructions require Docker to execute: https://www.docker.com/
 
 1. Download and unzip the project.
 2. Update the token in Main.py to the token of your application registered in the initial setup.
-3. Make Sure all references to RPi.GPIO are commented out. This can not be installed on windows and currently I have not found a way to enable/disable based on OS.
-4. Enable Virtual Environment before running. This should contain all required packages.
+3. If not running from a raspberry pi make sure all references to RPi.GPIO are commented out. This can not be installed on any OS besides raspian and currently I have not found a way to enable/disable based on OS.
+4. If not using MongoDB set USE_MONGO = False in Main.py to mock the database.
+5. Create a Docker image.
 
 ```bash
-env\scripts\activate
+docker build -t discord-bot .
 ```
 
-5. Run from command line (ex powershell)
+5. Run Container (can specify -d to free up command line)
 
 ```bash
-python src\Main.py
+docker run -it --rm --name discord-bot discord-bot
 ```
 
-### For RaspberryPi:
+On successful setup "Bot has connected to discord" will be displayed in command line.
 
-1. Clone the project.
-2. Update the token in Main.py to the token of your application registered in the initial setup.
-3. Make Sure all references to RPi.GPIO are NOT commented out. This can not be installed on windows and currently I have not found a way to enable/disable based on OS.
-4. Enable Virtual Environment before running. This should contain all required packages.
+### Installation without docker
 
-```bash
-env\scripts\activate
-```
-
-5. Run from command line (ex powershell)
-
-```bash
-python src\Main.py
-```
-
-On successful setup "Bot has connected to discord" will be displayed in command line
+If installing without Docker, make sure all dependancies in requirements.txt are installed either in a virtual environment or globaly.
 
 ## Usage
 

@@ -13,6 +13,8 @@ from discord.ext import commands
 USE_MONGO = False
 USE_RPI = False
 
+print('Updated...')
+
 if USE_MONGO:
     print('Using MongoDB...')
     # Connect to MongoDB Collection
@@ -113,11 +115,11 @@ async def _define(channel):
 
 @bot.event
 async def on_message(msg):
-    if msg[0] == '~':
+    if msg.content[0] == '~':
+        await bot.process_commands(msg)  # process all commands
         return
     if msg.author == bot.user:
         return
-    await bot.process_commands(msg)  # process all commands
     print(msg)
     msg_dict = {'_id': msg.id, 'author_id': msg.author.id, 'author_name': msg.author.name,       # convert a message into a dictionary
                 'author_discriminator': msg.author.discriminator, 'author_nick': msg.author.nick,
