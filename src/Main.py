@@ -1,7 +1,6 @@
 import Dictionary
 import TeamRandomizer
-#from PiLEDController import PiLEDController
-from RaspberryPi.BasePiLEDController import BasePiLEDController
+from RPi.PiLEDController import PiLEDController
 from Database.MongoCollection import MongoCollection
 from Database.BaseCollection import BaseCollection
 
@@ -10,10 +9,8 @@ from discord.ext import commands
 
 ### SETUP ###
 
+## Mongo Setup ##
 USE_MONGO = False
-USE_RPI = False
-
-print('Updated...')
 
 if USE_MONGO:
     print('Using MongoDB...')
@@ -23,20 +20,12 @@ else:
     print('Using MockDB...')
     # Use the base collection for testing
     comment_col = BaseCollection()
-    
-if USE_RPI:
-    print('Using Raspberry Pi GPIO...')
-    # Set up Raspberry Pi LEDs
-    #LED_21 = PiLEDController(21)    
-else:
-    print('Using Mock GPIO...')
-    LED_21 = BasePiLEDController()
 
-# import token
-TOKEN = 'YOUR_TOKEN'
-print(TOKEN)
+## RPi Setup ##
+LED_21 = PiLEDController(21) 
 
-# Connect to client
+## Discord Setup ##
+TOKEN = 'NDg3MDgzMjc3NDUxMTMyOTQw.XuVgNg.7L7f-X0tiCBEUXBAkQ8tYtnEIEQ'
 bot = commands.Bot(command_prefix='~')
 
 ### COMMANDS ###

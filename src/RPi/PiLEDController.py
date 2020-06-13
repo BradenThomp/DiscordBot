@@ -1,12 +1,10 @@
-""" 
 import RPi.GPIO as GPIO
 import time
 import atexit
-from BasePiLEDController import BasePiLEDController
 
 
 # Basic controls for a rapberry pi LED with safe power off
-class PiLEDController(BasePiLEDController):
+class PiLEDController():
 		
 	def __init__(self, LED):
 		self.LED = LED
@@ -35,5 +33,3 @@ class PiLEDController(BasePiLEDController):
 	def cleanup(self):
 		GPIO.cleanup()
 		print("Successfully cleaned up LED ", self.LED)
-
- """
