@@ -1,6 +1,6 @@
 import Dictionary
 import TeamRandomizer
-from RPi.PiLEDController import PiLEDController
+from RaspberryPiControllers.PiLEDController import PiLEDController
 from Database.MongoCollection import MongoCollection
 from Database.BaseCollection import BaseCollection
 
@@ -25,11 +25,10 @@ else:
 LED_21 = PiLEDController(21) 
 
 ## Discord Setup ##
-TOKEN = 'NDg3MDgzMjc3NDUxMTMyOTQw.XuVgNg.7L7f-X0tiCBEUXBAkQ8tYtnEIEQ'
+TOKEN = 'YOUR_TOKEN'
 bot = commands.Bot(command_prefix='~')
 
 ### COMMANDS ###
-
 @bot.event
 async def on_ready():
     print("Bot has connected to discord")

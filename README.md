@@ -13,7 +13,7 @@ The following instructions require Docker to execute: https://www.docker.com/
 
 1. Download and unzip the project.
 2. Update the token in Main.py to the token of your application registered in the initial setup.
-3. If not running from a raspberry pi make sure all references to RPi.GPIO are commented out. This cannot be installed on any OS besides raspian and currently I have not found a way to enable/disable based on OS.
+3. If running on a Raspberry Pi, delete the RPi directory in src.
 4. If not using MongoDB set USE_MONGO = False in Main.py to mock the database.
 5. Create a Docker image.
 
@@ -38,10 +38,6 @@ If installing without Docker, make sure all dependancies in requirements.txt are
 ### MongoDB:
 
 This Application uses MongoDB. If you do not have MongoDB installed, please set USE_MONGO = False in Main.py to use a Mock Database.
-
-### Raspberry Pi GPIO:
-
-If not running on the Raspberry Pi, set USE_RPI = False in Main.py to use a Mock GPIO. You will also have to comment out all references to RPi.GPIO as the application will not run on Operating System's that don't support this library.
 
 ### Commands:
 

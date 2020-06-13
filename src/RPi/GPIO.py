@@ -6,10 +6,11 @@ BCM = 1
 def setmode(a):
    pass
 def setup(a, b):
-   print("No Raspberry Pi Detected... Overiding RPi.GPIO as a mock")
+   print("WARNING: Raspberry Pi GPIO is currently being mocked...")
+   print("If you are running on a Raspberry Pi, delete the RPi directory in src.")
 def output(a, b):
    pass
 def cleanup():
-   print("No Raspberry Pi Detected... Nothing to cleanup")
+   pass
 def setwarnings(flag):
    pass
